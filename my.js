@@ -1,6 +1,6 @@
 function jsonp(url, params, fn) {
   var scriptElement;
-  var callbackName = 'itcast_' + (Math.random() * Math.random()).toString().substr(2)
+  var callbackName = 'wyyd' + (Math.random() * Math.random()).toString().substr(2)
   window[callbackName] = function(data) {
     fn(data)
     document.body.removeChild(scriptElement)
@@ -17,6 +17,3 @@ function jsonp(url, params, fn) {
   document.body.appendChild(scriptElement)
 }
 
-jsonp('https://api.douban.com/v2/movie/in_theaters', {}, function(data) {
-  console.log(data)
-})
